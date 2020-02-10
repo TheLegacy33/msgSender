@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +27,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		btSend = (Button) findViewById(R.id.btSend);
 		btSend.setOnClickListener(this);
 		ttNum = (EditText) findViewById(R.id.telNumber);
-		ttNum.setText("0616922318");
+		ttNum.setText("+33647203918");
 		ttContent = (EditText) findViewById(R.id.msgContent);
 		ttContent.setText("test");
 		
@@ -56,38 +57,47 @@ public class MainActivity extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		HashMap<String, String> lstNums = new HashMap<String, String>();
-		lstNums.put("Anthony", "0648253321");
-		lstNums.put("Laurence", "0695527993");
-		lstNums.put("Nicolas", "0615119548");
-		lstNums.put("Michel", "0603457118");
+		lstNums.put("Maxime", "+33789223133");
+		lstNums.put("Damien", "+33695878908");
+		lstNums.put("Thierry", "+33647205918");
+		lstNums.put("Michel", "+33603457118");
 		
-		/*try {
-			String msg = "Laurence, voici un nouveau jeu de piste :-)";
-			sendMessage(lstNums.get("Laurence"), msg);
+		try {
+			String msg = "Voici un nouveau jeu de piste :-)";
+			OutgoingSms.sendMessage(lstNums.get("Maxime"), msg);
+			Log.d(getString(R.string.app_name), msg);
 			Thread.sleep(5000);
 
-			msg = "La première partie du message que tu dois reconstruire arrive maintenant sur le téléphone d'Anthony ;-)";
-			sendMessage(lstNums.get("Laurence"), msg);
-			msg = "Message à donner à Laurence : \"Je dois la rappeler\" ";
-			sendMessage(lstNums.get("Anthony"), msg);			
-			Thread.sleep(2000);
+			msg = "La première partie du message que tu dois reconstruire arrive maintenant sur le téléphone de Damien ;-)";
+			OutgoingSms.sendMessage(lstNums.get("Maxime"), msg);
+			Log.d(getString(R.string.app_name), msg);
+			Thread.sleep(5000);
+			msg = "Message à donner à Maxime (+33789223133) : \"Il faut que tu intègres une nouveauté : \" ";
+			OutgoingSms.sendMessage(lstNums.get("Damien"), msg);
+			Log.d(getString(R.string.app_name), msg);
+			Thread.sleep(5000);
 			
-			msg = "La deuxième partie du message que tu dois reconstruire arrive maintenant sur le téléphone de Nicolas ;-)";
-			sendMessage(lstNums.get("Laurence"), msg);
-			msg = "Message à donner à Laurence : \"dès qu'elle sera plus en scooter\" ";
-			sendMessage(lstNums.get("Nicolas"), msg);			
-			Thread.sleep(2000);
+			msg = "La deuxième partie du message que tu dois reconstruire arrive maintenant sur le téléphone de Thierry ;-)";
+			OutgoingSms.sendMessage(lstNums.get("Maxime"), msg);
+			Log.d(getString(R.string.app_name), msg);
+			Thread.sleep(5000);
+			msg = "Message à donner à Maxime (+33789223133): \"C'est super pratique et extremement intéressant \" ";
+			OutgoingSms.sendMessage(lstNums.get("Thierry"), msg);
+			Log.d(getString(R.string.app_name), msg);
+			Thread.sleep(5000);
 
-			msg = "La dernière partie du message que tu dois reconstruire est \" donc à 16 h 45\" ;-)";
-			sendMessage(lstNums.get("Laurence"), msg);
+			msg = "La dernière partie du message que tu dois reconstruire est \" Cela s'appelle Docker :-) :-) :-)\" ;-)";
+			OutgoingSms.sendMessage(lstNums.get("Maxime"), msg);
+			Log.d(getString(R.string.app_name), msg);
 			Thread.sleep(5000);
 
 			msg = "Oui je sais, je suis nul ;-)";
-			sendMessage(lstNums.get("Laurence"), msg);
+			OutgoingSms.sendMessage(lstNums.get("Maxime"), msg);
+			Log.d(getString(R.string.app_name), msg);
 		} catch (InterruptedException e) {
 			// TODO Bloc catch généré automatiquement
 			e.printStackTrace();
-		}*/
-		OutgoingSms.sendMessage(ttNum.getText().toString(), ttContent.getText().toString());
+		}
+//		OutgoingSms.sendMessage(ttNum.getText().toString(), ttContent.getText().toString());
 	}
 }

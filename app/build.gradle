@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.msgsender"
-        minSdkVersion 14
+        minSdkVersion 24
         targetSdkVersion 28
     }
 

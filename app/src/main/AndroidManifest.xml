@@ -5,14 +5,12 @@
 	android:versionCode="1"
 	android:versionName="1.0" >
 
-	<uses-sdk android:targetSdkVersion="28"
-		tools:ignore="GradleOverrides" />
-
 	<uses-feature
 		android:name="android.hardware.telephony"
 		android:required="true" />
 
-	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.SEND_SMS"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 	<uses-permission android:name="android.permission.READ_SMS" />
 	<uses-permission android:name="android.permission.RECEIVE_SMS" />
 

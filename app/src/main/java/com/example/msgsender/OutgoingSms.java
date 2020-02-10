@@ -1,11 +1,15 @@
 package com.example.msgsender;
 
 import android.telephony.SmsManager;
+import android.telephony.SubscriptionManager;
 
 class OutgoingSms {
 
 	static void sendMessage(String pNumero, String pMessage){
-		SmsManager mySmsMan = SmsManager.getDefault();
-		mySmsMan.sendTextMessage(pNumero, null, pMessage, null, null);
+		try {SmsManager smsManager = SmsManager.getSmsManagerForSubscriptionId(SubscriptionManager.getDefaultSubscriptionId());
+			smsManager.sendTextMessage(pNumero, null, pMessage, null, null);
+		}catch (Exception ex){
+			ex.printStackTrace();
+		}
 	}
 }
