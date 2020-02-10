@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	package="com.example.msgsender"
+	android:versionCode="1"
+	android:versionName="1.0" >
+
+	<uses-sdk android:targetSdkVersion="28"
+		tools:ignore="GradleOverrides" />
+
+	<uses-feature
+		android:name="android.hardware.telephony"
+		android:required="true" />
+
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.READ_SMS" />
+	<uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+	<application
+		android:allowBackup="true"
+		android:icon="@drawable/ic_launcher"
+		android:label="@string/app_name"
+		android:theme="@style/AppTheme"
+		tools:ignore="GoogleAppIndexingWarning">
+		<activity
+			android:name=".MainActivity"
+			android:label="@string/title_activity_main" >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<!--        <receiver android:name=".IncomingSms"-->
+		<!--            android:permission="android.permission.BROADCAST_SMS">-->
+		<!--            <intent-filter>-->
+		<!--                <action android:name="android.provider.Telephony.SMS_RECEIVED" />-->
+		<!--            </intent-filter>-->
+		<!--        </receiver>-->
+		<activity
+			android:name=".ContactActivity"
+			android:label="@string/title_activity_contact" >
+			<!--            <intent-filter>-->
+			<!--                <action android:name="android.intent.action.MAIN" />-->
+			<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+			<!--            </intent-filter>-->
+		</activity>
+	</application>
+</manifest>
